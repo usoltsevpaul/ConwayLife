@@ -1,0 +1,59 @@
+html {
+    margin: 20px 10px;
+    background-color: #888888;
+}
+
+table td {
+    border-spacing: 0px;
+    outline: thin solid black;
+    padding: 0px;    
+}
+
+td {
+    /*background: linear-gradient(to bottom right, rgba(136, 136, 136, .1), rgba(136, 136, 136, .4));*/
+}
+
+#title {
+    color: red;
+}
+
+.octagon {
+    width: 50px;
+    height: 50px;
+    /*width: 24px;
+    height: 24px;*/
+    animation-name: pulse;
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(.95, .95) rotateX(0deg) rotate(0deg);
+        opacity: .95;
+        filter : hue-rotate(0deg);
+    }
+    25% {
+        transform: scale(1.05, 1.05) rotateX(10deg) rotate(-5deg);
+        opacity: .85;
+        filter : hue-rotate(60deg);
+    }
+    50% {
+        transform: scale(.95, .95) rotateX(0deg) rotate(0deg);
+        opacity: .95;
+        filter : hue-rotate(0deg);
+    }
+    75% {
+        transform: scale(1.05, 1.05) rotateX(-10deg) rotate(5deg);
+        opacity: .85;
+        filter : hue-rotate(60deg);
+    }
+    100% {
+        transform: scale(.95, .95) rotateX(0deg) rotate(0deg);
+        opacity: .95;
+        filter : hue-rotate(0deg);
+    }
+}
+
+/*#00ff2d icon colours green*/
+/*#888888 background colour gray*/
