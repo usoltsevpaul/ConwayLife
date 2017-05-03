@@ -11,6 +11,8 @@ table td {
 
 td {
     /*background: linear-gradient(to bottom right, rgba(136, 136, 136, .1), rgba(136, 136, 136, .4));*/
+    width: 24px;
+    height: 24px;
 }
 
 #title {
@@ -18,12 +20,13 @@ td {
 }
 
 .octagon {
-    width: 50px;
-    height: 50px;
-    /*width: 24px;
-    height: 24px;*/
+    /*width: 50px;
+    height: 50px;*/
+
+    width: 24px;
+    height: 24px;
     animation-name: pulse;
-    animation-duration: 10s;
+    animation-duration: 4s;
     animation-iteration-count: infinite;
 }
 
