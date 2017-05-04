@@ -22,6 +22,10 @@ $(function() {
     document.getElementById("table").innerHTML = text;
 
     setInterval(tick, 4000);
+
+    setTimeout(function () {
+        setInterval(cleanup, 4000);
+    }, 2000)
 })
 
 function tick() {
@@ -29,23 +33,40 @@ function tick() {
         row.forEach(function(life) {
             if (life) {
                 var neighbours = 0;
-                if (board[(life.y - 1) % 20][(life.x + 1) % 10]) {
+                if (board[(life.y) % 20][(life.x) % 10]) {
                     neighbours++;
                 }
 
-                if (neighbours > 0) {
-                    document.getElementById(life.x + ":" + life.y).innerHTML = "";
-                    board[life.x][life.y] = undefined;
+                if (Math.floor(Math.random() * 5) >= 3) {
+                    life.state = "dying";
+                } else {
+                    life.state = "born";
                 }
             }
         }, this);
     }, this);
 }
 
+function cleanup() {
+     board.forEach(function(row) {
+        row.forEach(function(life) {
+            if (life) {
+                if (life.state == "dying") {
+                    document.getElementById(life.y + ":" + life.x).innerHTML = "";
+                    life.state = "dead";
+                } else if (life.state == "born") {
+                    document.getElementById(life.y + ":" + life.x).innerHTML = "<img class=\"octagon\" src=\"assets/Mesh-100.png\" />";
+                    life.state = "alive";
+                }
+            }
+        }, this);
+     }, this);
+}
+
 class Life {
     constructor(x, y) {
         this.x = x;
         this.y = y;
-        this.dead = false;
+        this.state = "dead"; // "born", "alive", "dying", "dead"
     }
 }
