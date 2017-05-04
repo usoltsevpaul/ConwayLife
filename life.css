@@ -5,14 +5,18 @@ html {
 
 table td {
     border-spacing: 0px;
-    outline: thin solid black;
+    /*outline: thin solid black;*/
     padding: 0px;    
+}
+
+tr {
+    min-height: 8px;
 }
 
 td {
     /*background: linear-gradient(to bottom right, rgba(136, 136, 136, .1), rgba(136, 136, 136, .4));*/
-    width: 24px;
-    height: 24px;
+    min-width: 8px;
+    min-height: 8px;
 }
 
 #title {
@@ -20,14 +24,13 @@ td {
 }
 
 .octagon {
-    /*width: 50px;
-    height: 50px;*/
-
-    width: 24px;
-    height: 24px;
-    animation-name: pulse;
+    width: 8px;
+    height: 8px;
+    border-spacing: 0px;
+    padding: 0px;
+    /*animation-name: pulse;
     animation-duration: 4s;
-    animation-iteration-count: infinite;
+    animation-iteration-count: infinite;*/
 }
 
 @keyframes pulse {
