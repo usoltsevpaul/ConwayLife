@@ -3,20 +3,32 @@ html {
     background-color: #888888;
 }
 
+table {
+    overflow: hidden;
+}
+
 table td {
     border-spacing: 0px;
-    /*outline: thin solid black;*/
-    padding: 0px;    
+    padding: 0px;
+    height: 24px;
+    width: 16px;
+    position: relative;
 }
 
-tr {
-    min-height: 8px;
+table, tr:hover, td:hover {
+    outline: thin solid black;
 }
 
-td {
-    /*background: linear-gradient(to bottom right, rgba(136, 136, 136, .1), rgba(136, 136, 136, .4));*/
-    min-width: 8px;
-    min-height: 8px;
+td:hover::after,
+th:hover::after {
+  content: "";
+  position: absolute;
+  outline: thin solid black;
+  left: 0;
+  top: -1000px;
+  height: 2000px;
+  width: 100%;
+  z-index: -1;
 }
 
 #title {
@@ -24,8 +36,8 @@ td {
 }
 
 .octagon {
-    width: 8px;
-    height: 8px;
+    width: 16px;
+    height: 16px;
     border-spacing: 0px;
     padding: 0px;
     /*animation-name: pulse;
@@ -37,27 +49,22 @@ td {
     0% {
         transform: scale(.95, .95) rotateX(0deg) rotate(0deg);
         opacity: .95;
-        filter : hue-rotate(0deg);
     }
     25% {
         transform: scale(1.05, 1.05) rotateX(10deg) rotate(-5deg);
         opacity: .85;
-        filter : hue-rotate(60deg);
     }
     50% {
         transform: scale(.95, .95) rotateX(0deg) rotate(0deg);
         opacity: .95;
-        filter : hue-rotate(0deg);
     }
     75% {
         transform: scale(1.05, 1.05) rotateX(-10deg) rotate(5deg);
         opacity: .85;
-        filter : hue-rotate(60deg);
     }
     100% {
         transform: scale(.95, .95) rotateX(0deg) rotate(0deg);
         opacity: .95;
-        filter : hue-rotate(0deg);
     }
 }
 
